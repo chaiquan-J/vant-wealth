@@ -14,7 +14,7 @@
 							</template>
 						</van-field>
 					</van-cell-group>
-					<van-button type="primary" class="lg_btn" @click="">登陆</van-button>
+					<van-button type="primary" class="lg_btn" @click="logUser">登陆</van-button>
 					<span class="goreg" @click="goBackreg">账号注册</span>
 				</div>
 			</template>
@@ -58,7 +58,9 @@
 </template>
 
 <script>
-	import { Notify } from 'vant';
+	import {
+		Notify
+	} from 'vant';
 	export default {
 		data() {
 			return {
@@ -73,12 +75,47 @@
 		methods: {
 			goBackreg() {
 				this.regflg = !this.regflg
+				this.tel = ""
+				this.pwd = ""
 			},
 			regUesr() {
 				if (this.tel == "" || this.pwd == "") {
-					Notify({ type: 'primary', message: '请正确输入密码或账号' });
+					Notify({
+						type: 'warning',
+						message: '请正确输入账号或密码!',
+						duration: 2000
+					});
 				} else {
-					
+					localStorage.setItem(this.tel, this.pwd)
+					if (localStorage.getItem(this.tel)) {
+						Notify({
+							type: 'success',
+							message: '注册成功!',
+							duration: 1000
+						});
+						setTimeout(() => {
+							this.tel = ""
+							this.pwd = ""
+							this.regflg = true
+						}, 500)
+					}
+				}
+			},
+			logUser() {
+				let user = localStorage.getItem(this.tel)
+				if (!user || user != this.pwd) {
+					Notify({
+						type: 'warning',
+						message: '账号或密码错误!',
+						duration: 2000
+					});
+				} else {
+					Notify({
+						type: 'success',
+						message: '登录成功!',
+						duration: 1000
+					});
+					this.$router.push('Discovery')
 				}
 			}
 		}
@@ -183,6 +220,7 @@
 
 				.clause {
 					margin-top: 10px;
+					font-size: 10px;
 
 					span {
 						color: #BFBFBF;
