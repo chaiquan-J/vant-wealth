@@ -19,7 +19,7 @@
 				</div>
 				<div class="bottom_box">
 					<div class="roll_box">
-						<van-swipe class="roll-swipe" :vertical="true" :show-indicators="false" :autoplay="4000" indicator-color="white">
+						<van-swipe class="roll-swipe" :vertical="true" :touchable="false" :show-indicators="false" :autoplay="4000" indicator-color="white">
 							<template v-for="(item,index) in roll_box">
 								<van-swipe-item :key="index">
 									<div class="item_box">
@@ -53,13 +53,76 @@
 					<template v-for="(item,key) in tab_one">
 						<van-tab :title="item" :key="key">
 							<div class="cont_box">
-								
+								<div class="interior_box">
+									<span class="title">
+										内需消费
+									</span>
+									<div class="card_box">
+										<div class="card_top">
+											<span>投资潜力</span>
+											<van-rate v-model="value" size="15px" color="#FBD612" readonly allow-half void-icon="star" void-color="#eee" />
+										</div>
+										<div class="card_bottom">
+											<div class="bottom_left">
+												<span>富国消费主题混合</span>
+												<span>投资机会，就在你身边</span>
+												<div class="tag_two">
+													<van-tag plain type="primary">消费旺季</van-tag>
+													<van-tag plain type="primary">聚焦龙头</van-tag>
+												</div>
+											</div>
+											<div class="bottom_right">
+												10元上车
+											</div>
+										</div>
+									</div>
+									<div class="bottom_tag">
+										<van-icon name="chart-trending-o" class="tag_icon" color="#286FFE" size="15px" />
+										<span>选品还要看配置，来看看「三笔钱」</span>
+										<van-icon name="arrow" color="#538CE7" />
+									</div>
+								</div>
 							</div>
 						</van-tab>
 					</template>
 				</van-tabs>
 			</div>
-			<div class="wealth_train"></div>
+			<div class="wealth_train">
+				<div class="title_box">
+					<span>财富直通车</span>
+					<span>最近使用</span>
+				</div>
+				<div class="wealth_swiper">
+					<van-swipe class="my-swipe" :loop="false" :autoplay="3000" indicator-color="white">
+						<van-swipe-item>1</van-swipe-item>
+						<van-swipe-item>2</van-swipe-item>
+						<van-swipe-item>3</van-swipe-item>
+						<van-swipe-item>4</van-swipe-item>
+					</van-swipe>
+				</div>
+			</div>
+			<div class="tab_two">
+				<van-sticky>
+					<van-tabs v-model="tab_two_active" swipeable line-width="12px" color="#2772FF" title-active-size="20px"
+					 title-active-color="#2772FF" title-inactive-color="#000">
+						<van-tab title="快讯">
+							快讯
+						</van-tab>
+						<van-tab title="热点">
+							热点
+						</van-tab>
+						<van-tab title="问答">
+							问答
+						</van-tab>
+						<van-tab title="基金">
+							基金
+						</van-tab>
+						<van-tab title="行情">
+							行情
+						</van-tab>
+					</van-tabs>
+				</van-sticky>
+			</div>
 		</div>
 		<tab-bar></tab-bar>
 	</div>
@@ -138,7 +201,9 @@
 					'精选组合',
 					'进攻优选',
 					'保险优选'
-				]
+				],
+				value: 4,
+				tab_two_active: 1
 			}
 		},
 		methods: {
@@ -188,16 +253,17 @@
 				}
 
 				.top_grid {
-					height: 155px;
+					height: 145px;
 					width: 100%;
 					background-color: #FFFFFF;
 					border-radius: 5px;
 					box-shadow: 0px 0px 10px #d9dadd;
 					overflow: hidden;
 					margin-bottom: 15px;
+					padding-top: 10px;
 
 					.gtid_cont {
-						height: auto;
+						height: 150px;
 						display: flex;
 						flex-direction: column;
 						align-items: center;
@@ -321,28 +387,182 @@
 			}
 
 			.tab_one {
-				height: 260px;
+				height: 310px;
 				width: 100%;
-				background-color: #eee;
+				background-color: #FFF;
 
 				.title {
 					font-size: 15px;
 				}
 
 				.cont_box {
-					height: 180px;
-					width: 340px;
-					background-color: #cb6c5f;
+					height: 220px;
+					width: 320px;
+					background-color: #69A1FE;
 					margin: 0 auto;
 					margin-top: 15px;
 					border-radius: 5px;
+
+					.interior_box {
+						height: 100%;
+						width: 290px;
+						margin: 0 auto;
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+
+						.title {
+							display: block;
+							height: 45px;
+							width: auto;
+							color: #fff;
+							line-height: 45px;
+							font-size: 16px;
+							font-weight: bold;
+						}
+
+						.card_box {
+							height: 135px;
+							width: 100%;
+							border-radius: 5px;
+							background-color: #FFFFFF;
+							display: flex;
+							flex-direction: column;
+
+							.card_top {
+								height: 40px;
+								width: 270px;
+								margin: 0 auto;
+								display: flex;
+								align-items: center;
+								border-bottom: 1px solid #F4F4F4;
+								margin-bottom: 10px;
+
+								span {
+									font-size: 15px;
+									font-weight: 600;
+									color: #FCCF09;
+									margin-right: 10px;
+								}
+							}
+
+							.card_bottom {
+								height: 70px;
+								width: 270px;
+								margin: 0 auto;
+								display: flex;
+								justify-content: space-between;
+								align-items: center;
+
+								.bottom_right {
+									height: 25px;
+									width: 70px;
+									color: #fff;
+									font-size: 10px;
+									line-height: 25px;
+									border-radius: 20px;
+									background-color: #266EFF;
+								}
+
+								.bottom_left {
+									height: 100%;
+									width: 150px;
+									display: flex;
+									flex-direction: column;
+									align-items: flex-start;
+									justify-content: space-between;
+
+									span:nth-child(1) {
+										font-weight: 600;
+										font-size: 15px;
+									}
+
+									span:nth-child(2) {
+										font-size: 10px;
+										color: #666666;
+									}
+
+									.tag_two {
+										height: auto;
+										width: 120px;
+										display: flex;
+										justify-content: space-between;
+
+										span {
+											font-weight: normal;
+											font-size: 10px;
+											color: #266EFF;
+										}
+									}
+								}
+							}
+						}
+
+						.bottom_tag {
+							height: 25px;
+							width: 240px;
+							background-color: #B9E0FF;
+							margin-top: 7.5px;
+							border-radius: 20px;
+							display: flex;
+							align-items: center;
+							font-size: 10px;
+
+							span {
+								color: #246EFF;
+								margin-left: 5px;
+							}
+
+							.tag_icon {
+								margin-left: 10px;
+							}
+						}
+					}
 				}
 			}
-			
-			.wealth_train{
-				height: 200px;
+
+			.wealth_train {
+				height: 220px;
 				width: 100%;
 				background-color: #ee1573;
+
+				.title_box {
+					height: 30px;
+					width: 345px;
+					background-color: #29ffdf;
+					margin: 0 auto;
+					display: flex;
+					justify-content: space-between;
+
+					span:nth-child(1) {
+						font-size: 15px;
+						font-weight: 600;
+					}
+
+					span:nth-child(2) {
+						font-size: 10px;
+						color: #999999;
+					}
+				}
+
+				.wealth_swiper {
+					height: auto;
+					width: 100%;
+
+					.my-swipe .van-swipe-item {
+						color: #fff;
+						font-size: 20px;
+						line-height: 150px;
+						text-align: center;
+						background-color: #39a9ed;
+					}
+				}
+			}
+
+			.tab_two {
+				height: 800px;
+				width: 100%;
+				background-color: #EEE;
 			}
 		}
 	}
