@@ -61,6 +61,9 @@
 	import {
 		Notify
 	} from 'vant';
+	import {
+		Toast
+	} from 'vant';
 	export default {
 		data() {
 			return {
@@ -80,10 +83,9 @@
 			},
 			regUesr() {
 				if (this.tel == "" || this.pwd == "") {
-					Notify({
-						type: 'warning',
-						message: '请正确输入账号或密码!',
-						duration: 2000
+					Toast({
+						message: '请正确输入账号或密码',
+						forbidClick:true
 					});
 				} else {
 					localStorage.setItem(this.tel, this.pwd)
@@ -104,17 +106,16 @@
 			logUser() {
 				let user = localStorage.getItem(this.tel)
 				if (!user || user != this.pwd) {
-					Notify({
-						type: 'warning',
+					Toast({
 						message: '账号或密码错误!',
-						duration: 2000
+						forbidClick:true
 					});
 				} else {
-					Notify({
-						type: 'success',
-						message: '登录成功!',
-						duration: 1000
-					});
+					Toast.success({
+						message:'登陆成功!',
+						duration:1000,
+						forbidClick:true
+					})
 					this.$router.push('Discovery')
 				}
 			}
