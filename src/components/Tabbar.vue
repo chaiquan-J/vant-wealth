@@ -1,13 +1,13 @@
 <template>
 	<div class="tabbar">
 		<van-tabbar route v-model="active" active-color="#016AFF" inactive-color="#C2CED4">
-			<van-tabbar-item replace to="/">
+			<van-tabbar-item replace to="/discovery">
 				<span>发现</span>
 				<template #icon="props">
 					<img :src="props.active ? icon[0].active : icon[0].inactive" />
 				</template>
 			</van-tabbar-item>
-			<van-tabbar-item replace to="/optional">
+			<van-tabbar-item replace to="/">
 				<span>自选</span>
 				<template #icon="props">
 					<img :src="props.active ? icon[1].active : icon[1].inactive" />
@@ -62,5 +62,9 @@
 <style lang="less" scoped>
 	.tabbar {
 		font-weight: 600;
+		
+		div.van-tabbar-item--active{
+			color: #016AFF !important;
+		}
 	}
 </style>

@@ -14,14 +14,27 @@ const routes = [{
 		component: () => import('../views/About.vue')
 	},
 	{
-		path: '/',
+		path: '/discovery',
 		name: 'Discovery',
 		component: () => import('../views/Discovery.vue')
 	},
 	{
-		path: '/optional',
+		path: '/',
 		name: 'Optional',
-		component: () => import('../views/Optional.vue')
+		component: () => import('../views/Optional.vue'),
+		redirect:'/optional/opt_stock',
+		children:[
+			{
+				path:'/optional/opt_stock',
+				name:'opt_stock',
+				component: () => import('../components/opt_stock.vue')
+			},
+			{
+				path:'/optional/opt_fund',
+				name:'opt_fund',
+				component: () => import('../components/opt_fund.vue')
+			},
+		]
 	},
 	{
 		path: '/property',
@@ -32,7 +45,7 @@ const routes = [{
 		path: '/community',
 		name: 'Community',
 		component: () => import('../views/Community.vue')
-	},
+	}
 ]
 
 const router = new VueRouter({

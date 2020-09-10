@@ -1,0 +1,62 @@
+.opt_stock {
+	height: 100%;
+	width: 100%;
+	background-color: #f5f4f9;
+
+	.opt_stock_body {
+		position: relative;
+
+		.top_swiper {
+			height: 40px;
+			width: 100%;
+			background-color: #fff;
+			display: flex;
+			justify-content: space-between;
+
+			.left_title {
+				height: 100%;
+				width: 100px;
+				font-size: 16px;
+				color: #5e9beb;
+				font-weight: 600;
+				line-height: 40px;
+			}
+
+			.right_swiper {
+				height: 100%;
+				width: 275px;
+				overflow: hidden;
+
+				.my-swipe {
+					height: 100%;
+					width: 100%;
+					
+					.item_cont {
+						height: 40px;
+						width: 100%;
+						line-height: 40px;
+						font-size: 13px;
+						font-weight: 500;
+						color: #7F7F7F;
+
+						span {
+							display: block;
+							width: 95%;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+					}
+				}
+			}
+		}
+
+		.bottom_swiper {
+			height: 40px;
+			width: 100%;
+			background-color: #ffd810;
+			position: fixed;
+			bottom: 50px;
+		}
+	}
+}
