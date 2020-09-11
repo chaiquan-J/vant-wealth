@@ -9,17 +9,12 @@ const routes = [{
 		component: () => import('../views/Login.vue')
 	},
 	{
-		path: '/about',
-		name: 'About',
-		component: () => import('../views/About.vue')
-	},
-	{
 		path: '/discovery',
 		name: 'Discovery',
 		component: () => import('../views/Discovery.vue')
 	},
 	{
-		path: '/',
+		path: '/optional',
 		name: 'Optional',
 		component: () => import('../views/Optional.vue'),
 		redirect:'/optional/opt_stock',
@@ -37,14 +32,14 @@ const routes = [{
 		]
 	},
 	{
+		path: '/',
+		name: 'Community',
+		component: () => import('../views/Community.vue')
+	},
+	{
 		path: '/property',
 		name: 'Property',
 		component: () => import('../views/Property.vue')
-	},
-	{
-		path: '/community',
-		name: 'Community',
-		component: () => import('../views/Community.vue')
 	}
 ]
 
