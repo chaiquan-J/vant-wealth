@@ -13,13 +13,13 @@
 					<img :src="props.active ? icon[1].active : icon[1].inactive" />
 				</template>
 			</van-tabbar-item>
-			<van-tabbar-item replace to="/">
+			<van-tabbar-item replace to="/community">
 				<span>社区</span>
 				<template #icon="props">
 					<img :src="props.active ? icon[2].active : icon[2].inactive" />
 				</template>
 			</van-tabbar-item>
-			<van-tabbar-item replace to="/property">
+			<van-tabbar-item replace to="/">
 				<span>资产</span>
 				<template #icon="props">
 					<img :src="props.active ? icon[3].active : icon[3].inactive" />

@@ -32,12 +32,12 @@ const routes = [{
 		]
 	},
 	{
-		path: '/',
+		path: '/community',
 		name: 'Community',
 		component: () => import('../views/Community.vue')
 	},
 	{
-		path: '/property',
+		path: '/',
 		name: 'Property',
 		component: () => import('../views/Property.vue')
 	}

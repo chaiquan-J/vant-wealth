@@ -142,7 +142,15 @@
 							</div>
 						</div>
 					</van-tab>
-					<van-tab title="关注">关注</van-tab>
+					<van-tab title="关注">
+						<div class="attention_box">
+							<div class="cont-box">
+								<img src="../assets/logo.png" alt="" />
+								<span>你还没有关注的人</span>
+								<span>赶紧去社区找找牛人吧！</span>
+							</div>
+						</div>
+					</van-tab>
 				</van-tabs>
 				<!-- </van-sticky> -->
 			</div>
@@ -158,7 +166,7 @@ export default {
 	data() {
 		return {
 			value: '',
-			active: 1
+			active: 0
 		};
 	},
 	components: {
