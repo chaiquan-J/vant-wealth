@@ -19,7 +19,7 @@
 					<img :src="props.active ? icon[2].active : icon[2].inactive" />
 				</template>
 			</van-tabbar-item>
-			<van-tabbar-item replace to="/">
+			<van-tabbar-item replace to="/property">
 				<span>资产</span>
 				<template #icon="props">
 					<img :src="props.active ? icon[3].active : icon[3].inactive" />
@@ -30,41 +30,40 @@
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				active: 0,
-				icon: [{
-						active: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
-						inactive: 'https://s1.ax1x.com/2020/09/08/wMSjJO.png',
-					},
-					{
-						active: 'https://s1.ax1x.com/2020/09/08/wMSvWD.png',
-						inactive: 'https://s1.ax1x.com/2020/09/08/wMppyd.png',
-					},
-					{
-						active: 'https://s1.ax1x.com/2020/09/08/wMpSQH.png',
-						inactive: 'https://s1.ax1x.com/2020/09/08/wMSzSe.png',
-					},
-					{
-						active: 'https://s1.ax1x.com/2020/09/08/wMSqdx.png',
-						inactive: 'https://s1.ax1x.com/2020/09/08/wMSLo6.png',
-					},
-				]
-			}
-		},
-		methods: {
-
-		}
-	}
+export default {
+	data() {
+		return {
+			active: 0,
+			icon: [
+				{
+					active: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
+					inactive: 'https://s1.ax1x.com/2020/09/08/wMSjJO.png'
+				},
+				{
+					active: 'https://s1.ax1x.com/2020/09/08/wMSvWD.png',
+					inactive: 'https://s1.ax1x.com/2020/09/08/wMppyd.png'
+				},
+				{
+					active: 'https://s1.ax1x.com/2020/09/08/wMpSQH.png',
+					inactive: 'https://s1.ax1x.com/2020/09/08/wMSzSe.png'
+				},
+				{
+					active: 'https://s1.ax1x.com/2020/09/08/wMSqdx.png',
+					inactive: 'https://s1.ax1x.com/2020/09/08/wMSLo6.png'
+				}
+			]
+		};
+	},
+	methods: {}
+};
 </script>
 
 <style lang="less" scoped>
-	.tabbar {
-		font-weight: 600;
-		
-		div.van-tabbar-item--active{
-			color: #016AFF !important;
-		}
+.tabbar {
+	font-weight: 600;
+
+	div.van-tabbar-item--active {
+		color: #016aff !important;
 	}
+}
 </style>

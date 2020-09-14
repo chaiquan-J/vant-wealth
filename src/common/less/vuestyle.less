@@ -12,6 +12,18 @@
 	}
 
 	.tab_two {
+		.van-tabs__wrap {
+			background-color: #fff !important;
+		}
+
+		.van-tabs__nav {
+			width: 350px !important;
+		}
+
+		.van-tabs__wrap {
+			height: 40px !important;
+		}
+
 		.van-tab {
 			font-size: 15px;
 		}
@@ -19,6 +31,17 @@
 		.van-tab--active {
 			font-weight: 600 !important;
 			font-size: 18px;
+		}
+
+		.van-tabs__line {
+			border-radius: 5;
+			height: 4px;
+		}
+	}
+
+	.flash {
+		.van-step--vertical:not(:last-child)::after {
+			border: none !important;
 		}
 	}
 }
@@ -40,17 +63,25 @@
 			font-size: 14px !important;
 		}
 	}
-	
-	.tab_page{
-		.van-tab{
+
+	.tab_page {
+		.van-tabs__wrap {
+			background-color: #fff;
+		}
+
+		.van-tabs__nav {
+			width: 260px;
+		}
+
+		.van-tab {
 			font-size: 18px;
 		}
-		
-		.van-tab--active{
+
+		.van-tab--active {
 			font-weight: 800;
 		}
-		
-		.van-tabs__line{
+
+		.van-tabs__line {
 			border-radius: 0;
 			height: 4px;
 		}

@@ -73,5 +73,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url(../common/less/opt_stock.less);
+@import url(../../common/less/opt_stock.less);
 </style>

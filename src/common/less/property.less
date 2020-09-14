@@ -5,6 +5,7 @@
 	.property_body {
 		position: relative;
 
+		// 顶部工具
 		.header_box {
 			height: 50px;
 			width: 100%;
@@ -12,6 +13,7 @@
 			align-items: center;
 			justify-content: flex-end;
 			background-color: #2a88fa;
+			background-image: linear-gradient(-50deg,#5C5DED,#0BDDFC);
 			margin-bottom: 10px;
 			position: relative;
 			z-index: 999;
@@ -26,15 +28,17 @@
 			}
 		}
 
+		// 顶部背景
 		.header_bg {
 			height: 160px;
 			width: 100%;
-			background-color: #2b7bfb;
+			background-image: linear-gradient(-40deg,#5C5DED,#0BDDFC);
 			position: absolute;
 			top: 0;
 			z-index: 1;
 		}
 
+		// 用户框开始
 		.user_card {
 			height: 140px;
 			width: 345px;
@@ -45,102 +49,10 @@
 			z-index: 10;
 			box-shadow: 0px 3px 5px #f0f0f0;
 			margin-bottom: 15px;
-
-			.cont_box {
-				height: 100%;
-				width: 92%;
-				margin: 0 auto;
-				display: flex;
-				flex-direction: column;
-
-				.user_box {
-					height: 100px;
-					width: 100%;
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-					border-bottom: 1px solid #e8ebef;
-
-					.user_left {
-						height: 60px;
-						width: auto;
-						display: flex;
-						align-items: center;
-
-						.user_img {
-							height: 50px;
-							width: 50px;
-							border: 1px solid #fff;
-						}
-
-						.user_text {
-							height: 100%;
-							width: auto;
-							display: flex;
-							flex-direction: column;
-							justify-content: center;
-							margin-left: 10px;
-
-							span {
-								color: #000000;
-								font-size: 15px;
-							}
-
-							.user_name {
-								display: flex;
-								align-items: center;
-								margin-bottom: 5px;
-
-								span {
-									font-size: 20px;
-									font-weight: 600;
-									color: #000;
-								}
-							}
-						}
-					}
-
-					.user_right {
-						height: 45px;
-						width: auto;
-						display: flex;
-						flex-direction: column;
-						justify-content: space-between;
-						align-items: center;
-
-						span {
-							font-size: 15px;
-							color: #1677ff;
-						}
-
-						.btn {
-							height: 20px;
-							width: 80px;
-							background-color: #e5f1ff;
-							border-radius: 20px;
-							font-size: 12px;
-							line-height: 21px;
-							color: #1979ff;
-						}
-					}
-				}
-
-				.run_box {
-					height: 35px;
-					width: 100%;
-					color: #999999;
-					display: flex;
-					align-items: center;
-					font-size: 10px;
-
-					span {
-						margin-top: 3px;
-						margin-left: 5px;
-					}
-				}
-			}
 		}
+		// 用户框结束
 
+		// 资产样式
 		.assets_card {
 			height: auto;
 			width: 345px;
@@ -148,138 +60,43 @@
 			margin: 0 auto;
 			box-shadow: 0px 1px 5px #dddddd;
 			overflow: hidden;
-
-			.card_box {
-				height: auto;
-				width: 100%;
-
-				.my_assets {
-					height: 50px;
-					margin-bottom: 0.5px;
-
-					.title {
-						height: 100%;
-						width: auto;
-						display: flex;
-						align-items: center;
-						justify-content: flex-start;
-						font-size: 17px;
-						font-weight: 600;
-
-						span {
-							margin-right: 5px;
-						}
-					}
-
-					.default {
-						height: 100%;
-						width: auto;
-						display: flex;
-						align-items: center;
-						font-size: 12px;
-						justify-content: flex-end;
-						font-weight: 400;
-					}
-				}
-
-				.total_assets {
-					height: 75px;
-
-					.title {
-						height: 100%;
-						width: auto;
-						display: flex;
-						flex-direction: column;
-						justify-content: space-between;
-						align-items: flex-start;
-
-						span:nth-child(1) {
-							font-size: 13px;
-							color: #808080;
-						}
-
-						span:nth-child(2) {
-							font-size: 20px;
-							font-weight: 800;
-							color: #000;
-						}
-					}
-
-					.default {
-						height: 100%;
-						width: auto;
-						display: flex;
-						flex-direction: column;
-						justify-content: space-between;
-						align-items: flex-end;
-
-						span:nth-child(2) {
-							font-size: 20px;
-							font-weight: 800;
-						}
-					}
-				}
-				
-				.balance_box {
-					display: flex;
-					
-					.balance {
-						height: 65px;
-						width: 170px;
-						border-right: 0.1px solid #F8F9FA;
-						
-						.title{
-							height: 100%;
-							width: auto;
-							display: flex;
-							flex-direction: column;
-							align-items: flex-start;
-							
-							span:nth-child(1) {
-								font-size: 13px;
-								color: #000;
-							}
-							
-							span:nth-child(2) {
-								font-size: 10px;
-								font-weight: 600;
-								color: #808080;
-							}
-						}
-					}
-					
-					.balance_baby{
-						height: 65px;
-						width: 170px;
-						
-						.title{
-							height: 100%;
-							width: auto;
-							display: flex;
-							flex-direction: column;
-							align-items: flex-start;
-							
-							span:nth-child(1) {
-								font-size: 13px;
-								color: #000;
-							}
-							
-							span:nth-child(2) {
-								font-size: 10px;
-								color: #808080;
-							}
-						}
-						
-						.default{
-							font-size: 13px;
-						}
-					}
-				}
-				
-				.financial_fund{
-					display: flex;
-				}
-			}
+			margin-bottom: 15px;
 		}
+		// 资产结束
+
+		// 我的保障
+		.my_safeguard {
+			height: 110px;
+			width: 345px;
+			border-radius: 5px;
+			margin: 0 auto;
+			box-shadow: 0px 1px 5px #dddddd;
+			overflow: hidden;
+			margin-bottom: 15px;
+		}
+		// 我的保障结束
+
+		// 我的功能
+		.my_function {
+			height: auto;
+			width: 345px;
+			border-radius: 5px;
+			margin: 0 auto;
+			box-shadow: 0px 1px 5px #dddddd;
+			overflow: hidden;
+			margin-bottom: 15px;
+		}
+		// 我的功能结束
+
+		// 借呗
+		.borrow {
+			height: auto;
+			width: 345px;
+			border-radius: 5px;
+			margin: 0 auto;
+			box-shadow: 0px 1px 5px #dddddd;
+			overflow: hidden;
+			margin-bottom: 15px;
+		} // 借呗结束
 	}
 }

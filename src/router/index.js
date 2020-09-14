@@ -4,6 +4,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [{
+		path: '/',
+		name: 'welcome',
+		component: () => import('../views/welcome.vue')
+	},
+	{
 		path: '/login',
 		name: 'Login',
 		component: () => import('../views/Login.vue')
@@ -17,17 +22,16 @@ const routes = [{
 		path: '/optional',
 		name: 'Optional',
 		component: () => import('../views/Optional.vue'),
-		redirect:'/optional/opt_stock',
-		children:[
-			{
-				path:'/optional/opt_stock',
-				name:'opt_stock',
-				component: () => import('../components/opt_stock.vue')
+		redirect: '/optional/opt_stock',
+		children: [{
+				path: '/optional/opt_stock',
+				name: 'opt_stock',
+				component: () => import('../components/optional/opt_stock.vue')
 			},
 			{
-				path:'/optional/opt_fund',
-				name:'opt_fund',
-				component: () => import('../components/opt_fund.vue')
+				path: '/optional/opt_fund',
+				name: 'opt_fund',
+				component: () => import('../components/optional/opt_fund.vue')
 			},
 		]
 	},
@@ -37,7 +41,7 @@ const routes = [{
 		component: () => import('../views/Community.vue')
 	},
 	{
-		path: '/',
+		path: '/property',
 		name: 'Property',
 		component: () => import('../views/Property.vue')
 	}

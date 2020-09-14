@@ -53,7 +53,7 @@
 					<span>最近使用</span>
 				</div>
 				<div class="wealth_swiper">
-					<van-swipe class="my-swipe" width="300" :loop="false" indicator-color="white">
+					<van-swipe class="my-swipe" width="300" height="200" :loop="false" indicator-color="#1678FF">
 						<template v-for="index in 4">
 							<van-swipe-item>
 								<div class="item_cont" :key="index">
@@ -75,30 +75,27 @@
 								</div>
 							</van-swipe-item>
 						</template>
-						<!-- <van-swipe-item><div class="item_cont"></div></van-swipe-item>
-						<van-swipe-item><div class="item_cont"></div></van-swipe-item>
-						<van-swipe-item><div class="item_cont"></div></van-swipe-item> -->
 					</van-swipe>
 				</div>
 			</div>
 			<div class="tab_two">
-				<van-sticky>
-					<van-tabs
-						v-model="tab_two_active"
-						swipeable
-						line-width="12px"
-						color="#2772FF"
-						title-active-size="20px"
-						title-active-color="#2772FF"
-						title-inactive-color="#000"
-					>
-						<van-tab title="快讯">快讯</van-tab>
-						<van-tab title="热点">热点</van-tab>
-						<van-tab title="问答">问答</van-tab>
-						<van-tab title="基金">基金</van-tab>
-						<van-tab title="行情">行情</van-tab>
-					</van-tabs>
-				</van-sticky>
+				<van-tabs
+					sticky
+					v-model="tab_two_active"
+					swipeable
+					line-width="12px"
+					color="#2772FF"
+					title-active-size="20px"
+					title-active-color="#2772FF"
+					title-inactive-color="#000"
+					animated
+				>
+					<van-tab title="快讯"><flash></flash></van-tab>
+					<van-tab title="热点"><hotspot></hotspot></van-tab>
+					<van-tab title="问答"><questions></questions></van-tab>
+					<van-tab title="基金"><funds></funds></van-tab>
+					<van-tab title="行情"><market></market></van-tab>
+				</van-tabs>
 			</div>
 		</div>
 		<tab-bar></tab-bar>
@@ -107,46 +104,52 @@
 
 <script>
 import TabBar from '@/components/Tabbar.vue';
-import DiscTabOne from '@/components/disc_tabone.vue';
+import DiscTabOne from '@/components/discovery/disc_tabone.vue';
+import Hotspot from '@/components/discovery/hotspot.vue';
+import Questions from '@/components/discovery/questions.vue';
+import Funds from '@/components/discovery/funds.vue';
+import Market from '@/components/discovery/market.vue';
+import Flash from '@/components/discovery/flash.vue';
+
 export default {
 	data() {
 		return {
 			top_grid: [
 				{
-					src: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
+					src: 'https://s1.ax1x.com/2020/09/12/wdu1iQ.png',
 					title: '余额宝'
 				},
 				{
-					src: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
-					title: '余额宝'
+					src: 'https://s1.ax1x.com/2020/09/12/wdtyqJ.png',
+					title: '理财'
 				},
 				{
-					src: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
-					title: '余额宝'
+					src: 'https://s1.ax1x.com/2020/09/12/wduKZ8.png',
+					title: '黄金'
 				},
 				{
-					src: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
-					title: '余额宝'
+					src: 'https://s1.ax1x.com/2020/09/12/wduVxI.png',
+					title: '基金'
 				},
 				{
-					src: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
-					title: '余额宝'
+					src: 'https://s1.ax1x.com/2020/09/12/wduMdS.png',
+					title: '尊享'
 				},
 				{
-					src: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
-					title: '余额宝'
+					src: 'https://s1.ax1x.com/2020/09/12/wduERA.png',
+					title: '股票'
 				},
 				{
-					src: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
-					title: '余额宝'
+					src: 'https://s1.ax1x.com/2020/09/12/wdumsP.png',
+					title: '财富号'
 				},
 				{
-					src: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
-					title: '余额宝'
+					src: 'https://s1.ax1x.com/2020/09/12/wdtcZ9.png',
+					title: '年金险'
 				},
 				{
-					src: 'https://s1.ax1x.com/2020/09/08/wMSXFK.png',
-					title: '余额宝'
+					src: 'https://s1.ax1x.com/2020/09/12/wduQIg.png',
+					title: '帮你投'
 				}
 			],
 			roll_box: [
@@ -173,10 +176,8 @@ export default {
 				}
 			],
 			hotspot: ['创业板暴跌', '3股停牌检查', '苹果发布会'],
-			tab_one_active: 0,
-			tab_one: ['投资顺风车', '攒点金子', '稳健理财', '精选组合', '进攻优选', '保险优选'],
-			value: 4,
-			tab_two_active: 1,
+			// 第二个标签栏起始页
+			tab_two_active: 0,
 			current: 0
 		};
 	},
@@ -187,7 +188,12 @@ export default {
 	},
 	components: {
 		TabBar,
-		DiscTabOne
+		DiscTabOne,
+		Hotspot,
+		Questions,
+		Funds,
+		Market,
+		Flash
 	}
 };
 </script>
@@ -196,5 +202,5 @@ export default {
 @import url(../common/less/vuestyle.less);
 </style>
 <style lang="less" scoped>
-@import url(../common/less/discovery.less);
+@import url(../common/discovery/discovery.less);
 </style>

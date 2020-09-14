@@ -1,0 +1,160 @@
+.hotspot {
+	height: auto;
+	width: 100%;
+
+	.hotspot_body {
+		height: auto;
+		width: 100%;
+		
+		// 头条
+		.headline {
+			height: 110px;
+			width: 100%;
+			background-color: #fff;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+
+			.cont_box {
+				height: 80px;
+				width: 345px;
+				border-radius: 10px;
+				background-color: #f4f7ff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.cont {
+					height: 50px;
+					width: 310px;
+					display: flex;
+					align-items: center;
+
+					.max_title {
+						height: auto;
+						width: 50px;
+						font-size: 18px;
+						font-weight: 800;
+						color: #3677f9;
+						margin-right: 5px;
+					}
+
+					.vertical {
+						height: 90%;
+						width: 1px;
+						background-color: #d9e1f4;
+						margin-right: 10px;
+					}
+
+					.description {
+						height: 100%;
+						width: 230px;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-around;
+						font-size: 13px;
+						font-weight: 500;
+
+						span:nth-child(1) {
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+
+						span:nth-child(2) {
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+					}
+				}
+			}
+		}
+		// 头条结束
+		
+		// 内容盒子
+		.journalism_box{
+			height: auto;
+			width: 100%;
+			background-color: #FFF;
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+			
+			.cont_box{
+				height: auto;
+				width: 345px;
+				margin: 0 auto;
+				margin-top: 30px;
+				margin-bottom: 20px;
+				display: flex;
+				flex-direction: column;
+				
+				.title{
+					height: auto;
+					width: 100%;
+					font-size:18px;
+					font-weight: 900;
+					line-height: 28px;
+					text-align: left;
+					margin-bottom: 12px;
+					
+					span{
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 2;
+						overflow: hidden;
+					}
+				}
+				
+				.cont{
+					height: 80px;
+					width: 100%;
+					display: flex;
+					align-items: flex-start;
+					font-size: 16px;
+					text-align: left;
+					line-height: 25px;
+					justify-content: space-between;
+					margin-bottom: 15px;
+					
+					img{
+						height: 100%;
+						width: 115px;
+						border-radius: 5px;
+					}
+					
+					span{
+						width: 213px;
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 3;
+						overflow: hidden;
+					}
+				}
+				
+				.bottom{
+					height: 20px;
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					font-size: 10px;
+					font-weight: 500;
+					color: #999999;
+					
+					.time{
+						height: 100%;
+						width: auto;
+						display: flex;
+						align-items: center;
+						
+						span:nth-child(1){
+							margin-right: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

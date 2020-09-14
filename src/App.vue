@@ -4,6 +4,19 @@
   </div>
 </template>
 
+<script>
+	export default{
+		data(){
+			return {
+				
+			}
+		},
+		methods:{
+			
+		}
+	}
+</script>
+
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

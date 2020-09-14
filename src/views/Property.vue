@@ -16,109 +16,27 @@
 			<!-- 背景结束 -->
 			<!-- 用户卡片 -->
 			<div class="user_card">
-				<div class="cont_box">
-					<div class="user_box">
-						<div class="user_left">
-							<van-image round class="user_img" :style="{}" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-							<div class="user_text">
-								<div class="user_name">
-									<span>XXX</span>
-									<van-icon name="arrow" size="10" />
-								</div>
-								<span>理财的第3天</span>
-							</div>
-						</div>
-						<div class="user_right">
-							<span>资产配置升级</span>
-							<div class="btn">开启三笔钱</div>
-						</div>
-					</div>
-					<div class="run_box">
-						<van-icon name="notes-o" size="20" />
-						<span>本月跑赢了多少用户?去看看</span>
-					</div>
-				</div>
+				<user-card></user-card>
 			</div>
 			<!-- 用户卡片结束 -->
 			<!-- 我的资产开始 -->
 			<div class="assets_card">
-				<div class="card_box">
-					<van-cell-group>
-						<van-cell class="my_assets">
-							<template #title>
-								<div class="title">
-									<span>我的资产</span>
-									<van-icon name="eye-o" size="20" />
-								</div>
-							</template>
-							<template #default>
-								<div class="default">
-									<span>账户安全险免费升级</span>
-									<van-icon name="arrow" size="5" />
-								</div>
-							</template>
-						</van-cell>
-					</van-cell-group>
-					<van-cell-group :border="false">
-						<van-cell class="total_assets">
-							<template #title>
-								<div class="title">
-									<span>总资产</span>
-									<span>0.00</span>
-								</div>
-							</template>
-							<template #default>
-								<div class="default">
-									<span>昨日收益</span>
-									<span>0.00</span>
-								</div>
-							</template>
-						</van-cell>
-					</van-cell-group>
-					<van-cell-group class="balance_box">
-						<van-cell :border="false" class="balance">
-							<template #title>
-								<div class="title">
-									<span>余额</span>
-									<span>0.00</span>
-								</div>
-							</template>
-						</van-cell>
-						<van-cell class="balance_baby">
-							<template #title>
-								<div class="title">
-									<span>余额宝</span>
-									<span>随存随取</span>
-								</div>
-							</template>
-							<template #default>
-								<div class="default">
-									<span>0.00</span>
-								</div>
-							</template>
-						</van-cell>
-					</van-cell-group>
-					<van-cell-group class="financial_fund">
-						<van-cell :border="false" class="balance">
-							<template #title>
-								<div class="title">
-									<span>理财产品</span>
-									<span>收益稳健</span>
-								</div>
-							</template>
-						</van-cell>
-						<van-cell class="balance_baby">
-							<template #title>
-								<div class="title">
-									<span>基金</span>
-									<span>费率1折起</span>
-								</div>
-							</template>
-						</van-cell>
-					</van-cell-group>
-				</div>
+				<assets-card></assets-card>
 			</div>
 			<!-- 我的资产结束 -->
+			<!-- 我的保障开始 -->
+			<div class="my_safeguard">
+				<safeguard></safeguard>
+			</div>
+			<!-- 我的保障结束 -->
+			<!-- 我的功能 -->
+			<div class="my_function">
+				<my-funciton></my-funciton>
+			</div>
+			<!-- 功能结束 -->
+			<!-- 借呗 -->
+			<div class="borrow"><my-borrow></my-borrow></div>
+			<!-- 借呗结束 -->
 		</div>
 		<tab-bar></tab-bar>
 	</div>
@@ -126,12 +44,54 @@
 
 <script>
 import TabBar from '@/components/Tabbar.vue';
+import assetsCard from '@/components/property/assetsCard.vue';
+import userCard from '@/components/property/userCard.vue';
+import safeguard from '@/components/property/safeguard.vue';
+import myFunciton from '@/components/property/myFunciton.vue';
+import myBorrow from '@/components/property/myBorrow.vue';
+
 export default {
 	data() {
-		return {};
+		return {
+			fun_data: [
+				{
+					title: '账单',
+					icon: 'balance-list',
+					color: '#1A8EFF',
+					value: '',
+					border: true
+				},
+				{
+					title: '银行卡',
+					icon: 'card',
+					color: '#FFC903',
+					value: '3',
+					border: false
+				},
+				{
+					title: '券包',
+					icon: 'coupon',
+					color: '#FF761D',
+					value: '',
+					border: true
+				},
+				{
+					title: '活动',
+					icon: 'point-gift',
+					color: '#FF4D4D',
+					value: '',
+					border: false
+				}
+			]
+		};
 	},
 	components: {
-		TabBar
+		TabBar,
+		assetsCard,
+		userCard,
+		safeguard,
+		myFunciton,
+		myBorrow
 	}
 };
 </script>

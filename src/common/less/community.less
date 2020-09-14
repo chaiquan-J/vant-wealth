@@ -365,6 +365,26 @@
 								display: flex;
 								flex-direction: column;
 								justify-content: center;
+								position: relative;
+								overflow: hidden;
+								
+								img{
+									height: 100%;
+									width: 100%;
+									position: absolute;
+									top: 0;
+									z-index: 1;
+								}
+								
+								.shade{
+									height: 100%;
+									width: 100%;
+									opacity:0.5;
+									position: absolute;
+									top: 0;
+									background-color: #444444;
+									z-index: 2;
+								}
 
 								span {
 									font-size: 18px;
@@ -372,6 +392,7 @@
 									color: #fff;
 									margin-top: 25px;
 									margin-left: 15px;
+									z-index: 99;
 								}
 
 								.text_box {
@@ -383,6 +404,7 @@
 									border-radius: 20px;
 									margin-top: 10px;
 									margin-left: 15px;
+									z-index: 99;
 
 									span {
 										font-size: 10px;
@@ -412,9 +434,14 @@
 								.regulation_data {
 									height: 100%;
 									width: 115px;
-									background-image: linear-gradient(-130deg, #3caa3a, #3caa3a, #5ac64f);
 									border-radius: 15px 15px 15px 3px;
 									margin-right: 10px;
+									overflow: hidden;
+									
+									img{
+										height: 100%;
+										width: 100%;
+									}
 								}
 
 								.description_box {

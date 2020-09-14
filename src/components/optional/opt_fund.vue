@@ -81,8 +81,8 @@ export default {
 };
 </script>
 <style lang="less">
-@import url(../common/less/vuestyle.less);
+@import url(../../common/less/vuestyle.less);
 </style>
 <style lang="less" scoped>
-@import url(../common/less/opt_fund.less);
+@import url(../../common/less/opt_fund.less);
 </style>

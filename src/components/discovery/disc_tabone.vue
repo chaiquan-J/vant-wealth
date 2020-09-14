@@ -9,7 +9,7 @@
 							<div class="card_box">
 								<div class="card_top">
 									<span>投资潜力</span>
-									<van-rate size="15px" color="#FBD612" readonly allow-half void-icon="star" void-color="#eee" />
+									<van-rate size="15px" :value="rate_value" color="#FBD612" readonly allow-half void-icon="star" void-color="#eee" />
 								</div>
 								<div class="card_bottom">
 									<div class="bottom_left">
@@ -41,14 +41,15 @@ export default {
 	data() {
 		return {
 			tab_one_active: 0,
-			tab_one: ['投资顺风车', '攒点金子', '稳健理财', '精选组合', '进攻优选', '保险优选']
+			tab_one: ['投资顺风车', '攒点金子', '稳健理财', '精选组合', '进攻优选', '保险优选'],
+			rate_value:4
 		};
 	}
 };
 </script>
 <style lang="less">
-@import url(../common/less/vuestyle.less);
+@import url(../../common/less/vuestyle.less);
 </style>
 <style lang="less" scoped>
-@import url(../common/less/discovery.less);
+@import url(../../common/discovery/discovery.less);
 </style>
